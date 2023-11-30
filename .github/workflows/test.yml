@@ -11,7 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: githubuserdemo/actionsutils@main
+        with:
+          fail: false
       - uses: githubuserdemo/actionsutils@main
         with:
-          tasks: 'fake'
+          fail: true
 
