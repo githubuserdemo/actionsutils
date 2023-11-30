@@ -2824,7 +2824,11 @@ async function run() {
   const fail = core.getInput("fail");
 
   if (fail == "true") {
+    // exit code before
+    console.log("exit code", process.exitCode);
     core.setFailed(`Failed - ${await randomFunction()}`);
+    // exit code after
+    console.log("exit code", process.exitCode);
   } else {
     core.setOutput("success", "true");
   }
