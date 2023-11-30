@@ -10,8 +10,8 @@ jobs:
       id-token: write
     runs-on: ubuntu-latest
     steps:
-      - uses: wechuli/actionsutils@main
-      - uses: wechuli/actionsutils@main
+      - uses: githubuserdemo/actionsutils@main
+      - uses: githubuserdemo/actionsutils@main
         with:
           tasks: 'fake'
-          create-artifact: true
+
