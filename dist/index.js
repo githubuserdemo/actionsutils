@@ -2825,12 +2825,17 @@ async function run() {
 
   if (fail == "true") {
     core.setFailed("Failed");
+    await randomFunction();
   } else {
     core.setOutput("success", "true");
   }
 }
 
 run();
+
+async function randomFunction() {
+  console.log("random function");
+}
 
 })();
 
