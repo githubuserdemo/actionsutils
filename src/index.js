@@ -5,12 +5,7 @@ async function run() {
   const fail = core.getInput("fail");
 
   if (fail == "true") {
-    core.setFailed("Failed");
-    await randomFunction();
-    // see exit code
-    console.log("exit code", process.exitCode);
-
-    process.exitCode = 0;
+    core.setFailed(`Failed - ${await randomFunction()}`);
   } else {
     core.setOutput("success", "true");
   }
@@ -19,5 +14,8 @@ async function run() {
 run();
 
 async function randomFunction() {
-  console.log("random function");
+  // see exit code
+  console.log("exit code", process.exitCode);
+  process.exitCode = 0;
+  return "I am a random function";
 }
